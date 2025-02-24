@@ -49,6 +49,9 @@ const Navbar = () => {
             <NavLink to="/achievement" onClick={handleLinkClick}>
               <li className="py-1 text-black font-[poppins] font-medium">Achievement</li>
             </NavLink>
+            <NavLink to="/gallery" onClick={handleLinkClick}>
+              <li className="py-1 text-black font-[poppins] font-medium">Gallery</li>
+            </NavLink>
             <NavLink to="/workers" onClick={handleLinkClick}>
               <li className="py-1 text-black font-[poppins] font-medium">Workers</li>
             </NavLink>
@@ -57,7 +60,7 @@ const Navbar = () => {
             </NavLink>
 
             {
-              token ? "" :
+              token ? <p>Logout</p> :
             <NavLink to="/login" onClick={handleLinkClick}>
               <li className="py-1 text-black font-[poppins] font-medium">Login</li>
             </NavLink>

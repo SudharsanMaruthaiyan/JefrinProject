@@ -3,6 +3,8 @@ import bcrypt from 'bcrypt'
 import userModel from '../models/userMode.js';
 import jwt from 'jsonwebtoken'
 import {v2 as cloudinary} from 'cloudinary'
+import workermoModel from '../models/workerModel.js';
+import appointmentModel from '../models/appointmentModel.js';
 
 //api to register  user
 const registerUser = async (req,res)=>{
@@ -122,6 +124,59 @@ const updateProfile = async (req, res)=>{
     }
 }
 
+// api to book appointment 
+const bookAppointment = async (req,res)=>{
+    try {
+        const {userId, worId, slotDate, slotTime} = req.body
+        const worData = await workermoModel.findById(worId).select('-password')
 
-export {loginUser , registerUser , getProfile, updateProfile}
+        if (!worData.available) {
+            return res.json({success:false, message:'doctor not available'})
+        } 
+
+        let slots_booked = worData.slots_booked
+
+        // checking for slot avalability
+        if(slots_booked[slotDate]){
+            if (slots_booked[slotDate].includes(slotTime)) {
+                return res.json({success:false, message:'doctor not available'})
+            }
+            else{
+                slots_booked[slotDate].push(slotTime)
+            }
+        }
+        else{
+            slots_booked[slotDate] = []
+            slots_booked[slotDate].push(slotTime)
+        }
+
+        const userData = await userModel.findById(userId).select("-password")
+        delete worData.slots_booked
+
+        const appointmentData = {
+            userId,
+            worId,
+            userData,
+            worData,
+            amount:worData.fees,
+            slotTime,
+            slotDate,
+            date:Date.now()
+        }
+
+        const newAppointment = new appointmentModel(appointmentData)
+        await newAppointment.save() 
+
+        // save new slots data in worData
+        await workermoModel.findByIdAndUpdate(worId,{slots_booked})
+
+        res.json({success:true, message:"Appointment Booked"})
+
+    } catch (error) {
+        console.log(error);
+        res.json({success:false, message: error.message})
+    }
+}
+
+export {loginUser , registerUser , getProfile, updateProfile, bookAppointment}
 

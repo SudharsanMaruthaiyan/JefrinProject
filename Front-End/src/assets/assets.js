@@ -58,3 +58,42 @@ export const assets = {
     razorpay_logo,
     doc1,
 }
+
+export const workers = [
+    {
+        _id: 'doc1',
+        name: 'Dr. Richard James',
+        image: doc1,
+        speciality: 'General physician',
+        experience: '4 Years',
+        about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
+        fees: 50,
+    },
+    {
+        _id: 'doc2',
+        name: 'Dr. Emily Larson',
+        image: doc2,
+        speciality: 'Gynecologist',
+        experience: '3 Years',
+        about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
+        fees: 60,
+    },
+    {
+        _id: 'doc3',
+        name: 'Dr. Sarah Patel',
+        image: doc3,
+        speciality: 'Dermatologist',
+        experience: '1 Years',
+        about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
+        fees: 30,
+    },
+    {
+        _id: 'doc4',
+        name: 'Dr. Christopher Lee',
+        image: doc4,
+        speciality: 'Pediatricians',
+        experience: '2 Years',
+        about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
+        fees: 40,
+    },
+]
