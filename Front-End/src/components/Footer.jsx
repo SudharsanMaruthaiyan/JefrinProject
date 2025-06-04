@@ -43,6 +43,7 @@ const Footer = () => {
         </div>
       </div>
       <p>&copy; 2024 Your Business. All Rights Reserved.</p>
+
     </footer>
   );
 };

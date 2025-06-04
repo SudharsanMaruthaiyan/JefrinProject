@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
     <header className="bg-white/30 backdrop-blur-lg text-white p-4 fixed w-full z-10 top-0 shadow-lg px-4 sm:px-[8%]">
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-black font-[poppins]">Your Business</h1>
+        <h1 className="text-2xl font-bold text-black font-[poppins]">John Engineering</h1>
 
         {/* Mobile Menu Button */}
         <button

@@ -8,12 +8,12 @@ const Home = () => {
     <div className='flex flex-col md:flex-row flex-wrap bg-primary rounded-lg mx-auto pt-28 pb-20 sm:px-[8%] '>
         {/* Left side  */}
         <div className=' md:w-1/2 flex flex-col items-start justify-center gap-4 py-10 m-auto md:py-[10vw] md:mb-[-30px]'>
-            <p className=' text-3xl md:text-xl lg:text-5xl text-black font-semibold font-[poppins] leading-tight md:leading-tight lg:leading-relaxed '>Book Appointment <br />
-            With Trusted Doctors</p>
+            <p className=' text-3xl md:text-xl lg:text-5xl text-black font-semibold font-[poppins] leading-tight md:leading-tight lg:leading-relaxed '>Welcome <br />
+            to our website!</p>
             <div className=' flex flex-col md:flex-row items-center gap-3 text-white text-sm font-light'>
                 <img className=' w-28' src={assets.group_profiles} alt="" />
-                <p className='text-black font-[poppins]'>Simply browse through our extensive list of trusted doctors, <br className=' hidden sm:block'/>
-                schedule your appointment hassle-free.</p>
+                <p className='text-black font-[poppins]'>Simply browse through our extensive list of trusted workers, <br className=' hidden sm:block'/>
+                schedule your works.</p>
             </div>
             <Link to={"/login"}>
                 <p className=' flex items-center gap-3 bg-black text-white px-8 py-3 rounded-full text-sm m-auto md:m-0 hover:scale-105 transition-all duration-300 font-[poppins] text-lg'>
@@ -31,6 +31,7 @@ const Home = () => {
         <div>
             <Testimonial/>
         </div>
+
     </div>
   )
 }
